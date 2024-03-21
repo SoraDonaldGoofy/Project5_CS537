@@ -419,20 +419,7 @@ scheduler(void)
       // to release ptable.lock and then reacquire it
       // before jumping back to us.
 
-      // Find the smallest nice value (max priority)
-      /*
-	  else {
-        if (p->nice < max_priority) {
-          max_priority = p->nice;
-        }
-      }
-    }
-
-    // For loop to allow highest priority threads to run in Round-Robin
-    for (p = ptable.proc; p < &ptable.proc[NPROC]; p++) {
-      if (p->nice == max_priority) {
-	  */
-	  if (p->nice == max_priority) {
+   	  if (p->nice == max_priority) {
 		c->proc = p;
 		// cprintf("Found something to run\n");
         switchuvm(p);
